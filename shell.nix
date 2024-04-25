@@ -3,6 +3,6 @@
 }:
 let pkgs = import sources.nixpkgs {};
 in nixpkgs.mkShell {
-  packages = with pkgs; [ cabal-install ];
+  packages = with pkgs; [ cabal-install cabal2nix ];
   inputsFrom = [ (import ./default.nix {}).testproj2.env ];
 }
