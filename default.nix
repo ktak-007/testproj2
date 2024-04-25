@@ -1,2 +1,6 @@
-{ nixpkgs ? import <nixpkgs> {}, compiler ? "ghc94" }:
-{ testproj2 = nixpkgs.pkgs.haskell.packages.${compiler}.callPackage ./testproj2.nix { }; }
+{ sources ? import ./nix/sources.nix
+}:
+let pkgs = import sources.nixpkgs {};
+in
+{ testproj2 = pkgs.haskellPackages.callPackage ./testproj2.nix { };
+}
