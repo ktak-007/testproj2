@@ -1,1 +1,2 @@
-(import ./default.nix).testproj2.env
+{ nixpkgs ? import <nixpkgs> {}, compiler ? "ghc94" }:
+(import ./default.nix { inherit nixpkgs compiler; }).testproj2.env
