@@ -1,7 +1,8 @@
 module Main where
 
-import Application
+-- import Application
 
 main :: IO ()
-main = run
+-- main = run
+main = putStrLn "Hello again!!!"
 

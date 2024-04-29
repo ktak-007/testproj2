@@ -94,4 +94,4 @@ executable testproj2
     -- Directories containing source files.
     hs-source-dirs:   app
 
-    build-depends:    testproj2
+    -- build-depends:    testproj2
