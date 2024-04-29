@@ -1,12 +1,11 @@
-{ nixpkgs ? import <nixpkgs> {}
-, sources ? import ./nix/sources.nix
+{ sources ? import ./nix/sources.nix
 }:
 let pkgs = import sources.nixpkgs {};
-in nixpkgs.mkShell {
-  packages = with pkgs; [
-    cabal-install
-    cabal2nix
-    haskellPackages.haskell-language-server
-  ];
-  inputsFrom = [ (import ./. {}).testproj2 ];
+in pkgs.haskellPackages.developPackage {
+  root = ./.;
+  modifier = drv:
+    pkgs.haskell.lib.addBuildTools drv (with pkgs.haskellPackages;
+      [ cabal-install
+        ghcid
+      ]);
 }

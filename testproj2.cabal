@@ -71,9 +71,12 @@ library
                     , common-depends
     exposed-modules:
       Application
+
+    other-modules:
       Linux.Syslog
       Plesk.Atf
       Plesk.Panel
+
     hs-source-dirs:
       src
 
