@@ -69,6 +69,11 @@ executable testproj2
 
     -- Other library packages from which modules are imported.
     build-depends:    base ^>=4.16.4.0
+                    , bytestring
+                    , conduit
+                    , parsec
+                    , rainbow
+                    , text
 
     -- Directories containing source files.
     hs-source-dirs:   app
