@@ -78,6 +78,9 @@ library a
 
     hs-source-dirs:   src
 
+    visibility:       private
+
+
 executable testproj2
     import:           common
 
