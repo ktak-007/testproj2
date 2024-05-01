@@ -65,18 +65,18 @@ common common
     -- Base language which the package is written in.
     default-language: GHC2021
 
--- library
---     import:           common
---     exposed-modules:
---       Application
+library a
+    import:           common
 
---     other-modules:
---       Linux.Syslog
---       Plesk.Atf
---       Plesk.Panel
+    exposed-modules:
+      Application
 
---     hs-source-dirs:
---       src
+    other-modules:
+      Linux.Syslog
+      Plesk.Atf
+      Plesk.Panel
+
+    hs-source-dirs:   src
 
 executable testproj2
     import:           common
@@ -85,15 +85,15 @@ executable testproj2
     main-is:          Main.hs
 
     -- Modules included in this executable, other than Main.
-    other-modules:    Application
-                    , Linux.Syslog
-                    , Plesk.Atf
-                    , Plesk.Panel
+    -- other-modules:    Application
+    --                 , Linux.Syslog
+    --                 , Plesk.Atf
+    --                 , Plesk.Panel
 
     -- LANGUAGE extensions used by modules in this package.
     -- other-extensions:
 
     -- Directories containing source files.
-    hs-source-dirs:   src
+    hs-source-dirs:   app
 
-    -- build-depends:    testproj2
+    build-depends:    testproj2:a
